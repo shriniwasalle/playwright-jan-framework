@@ -1,7 +1,9 @@
-import { devConfig } from "./environments/dev";
-import { stageConfig } from "./environments/stage";
-import { prodConfig } from "./environments/prod";
-import { qaConfig } from "./environments/qa";
+import {
+  devConfig,
+  stageConfig,
+  prodConfig,
+  qaConfig,
+} from "./environments/index";
 
 type Env = "dev" | "qa" | "stage" | "prod";
 
@@ -14,4 +16,4 @@ const configMap = {
   stage: stageConfig,
 };
 
-export const currentEnv = configMap[env]; // configMap[qa]
+export const currentEnv = configMap['qa']; // configMap[qa]

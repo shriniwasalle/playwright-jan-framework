@@ -1,22 +1,33 @@
 import { defineConfig, devices } from "@playwright/test";
+import {
+  FULLY_PARALLEL,
+  HEADLESS,
+  RETRIES,
+  SCREENSHOT_MODE,
+  SLOW_MO,
+  TRACE_MODE,
+  VIDEO_MODE,
+  WORKERS,
+} from "./src/config/constants/frameworkConstants";
+import { REPORTER_CONFIG } from "./src/config/constants/reportConstants";
 
 export default defineConfig({
   testDir: "./tests",
-  fullyParallel: false,
-  retries: 0,
-  workers: 1,
-  reporter: [["html", { open: "never" }], ["allure-playwright"]],
+  fullyParallel: FULLY_PARALLEL,
+  retries: RETRIES,
+  workers: WORKERS,
+  reporter: REPORTER_CONFIG,
 
   use: {
-    headless: true,
-    screenshot: "only-on-failure",
-    video: "retain-on-failure",
-    trace: "on-first-retry",
+    headless: HEADLESS,
+    screenshot: SCREENSHOT_MODE,
+    video: VIDEO_MODE,
+    trace: TRACE_MODE,
     viewport: null,
 
     launchOptions: {
       args: ["--start-maximized"],
-      slowMo: 500, // To slow down the actions
+      slowMo: SLOW_MO, // To slow down the actions
     },
   },
 

@@ -4,7 +4,16 @@
   "description": "This is the Playwright + Typescript Automation Framework",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:dev": "cross-env ENV=dev npx playwright test --headed",
+    "test:stage": "cross-env ENV=stage npx playwright test",
+    "test:prod": "cross-env ENV=prod npx playwright test",
+    "test:qa": "cross-env ENV=qa npx playwright test",
+    "report:playwright": "npx playwright show-report",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure:serve": "allure serve allure-report"
   },
   "author": "Shriniwas Alle",
   "license": "ISC",
