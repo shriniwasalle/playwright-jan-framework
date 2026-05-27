@@ -1,10 +1,16 @@
 import { test as base } from "../fixtures/baseFixture";
-import { LoginPage, NavbarPage, ProductsPage } from "../pages/index";
+import {
+  LoginPage,
+  NavbarPage,
+  ProductsDetailsPage,
+  ProductsPage,
+} from "../pages/index";
 
 type MyFixtures = {
   loginPage: LoginPage;
   navbarPage: NavbarPage;
   productsPage: ProductsPage;
+  productsDetailsPage: ProductsDetailsPage;
 };
 
 export const test = base.extend<MyFixtures>({
@@ -18,6 +24,10 @@ export const test = base.extend<MyFixtures>({
 
   productsPage: async ({ page }, use) => {
     await use(new ProductsPage(page));
+  },
+
+  productsDetailsPage: async ({ page }, use) => {
+    await use(new ProductsDetailsPage(page));
   },
 });
 
