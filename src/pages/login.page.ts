@@ -18,17 +18,17 @@ export class LoginPage {
 
   async enterEmailAddress(emailAddress: string) {
     // await this.txtEmailAddress.fill(emailAddress);
-    CommonUtils.fill(this.txtEmailAddress, emailAddress);
+    await CommonUtils.fill(this.txtEmailAddress, emailAddress);
   }
 
   async enterPassword(password: string) {
     // await this.txtPassword.fill(password);
-    CommonUtils.fill(this.txtPassword, password);
+    await CommonUtils.fill(this.txtPassword, password);
   }
 
   async clickLogin() {
     // await this.btnLogin.click();
-    CommonUtils.click(this.btnLogin);
+    await CommonUtils.click(this.btnLogin);
   }
 
   async loginToApp(emailAddress: string, password: string) {

@@ -18,21 +18,21 @@ export class ProductsDetailsPage {
 
   async isProductsDetailsVisible(): Promise<boolean> {
     // return await this.productDetailsSection.isVisible();
-    return CommonUtils.isVisible(this.productDetailsSection);
+    return await CommonUtils.isVisible(this.productDetailsSection);
   }
 
   async isProductNameVisible(): Promise<boolean> {
     // return await this.productName.isVisible();
-    return CommonUtils.isVisible(this.productName);
+    return await CommonUtils.isVisible(this.productName);
   }
 
   async isProductCategoryVisible(): Promise<boolean> {
-    return CommonUtils.isVisible(this.productCategory);
+    return await CommonUtils.isVisible(this.productCategory);
   }
 
   async getProductName(): Promise<string> {
     // return (await this.productName.textContent()) || "";
-    return CommonUtils.getText(this.productName);
+    return await CommonUtils.getText(this.productName);
   }
 
   async getProductDetails() {

@@ -16,12 +16,12 @@ export class ProductsPage {
 
   async isAllProductsHeaderVisible(): Promise<boolean> {
     // return await this.allProductsHeader.isVisible();
-    return CommonUtils.isVisible(this.allProductsHeader);
+    return await CommonUtils.isVisible(this.allProductsHeader);
   }
 
   async isProductsListVisible(): Promise<boolean> {
     // return await this.productsList.isVisible();
-    return CommonUtils.isVisible(this.productsList);
+    return await CommonUtils.isVisible(this.productsList);
   }
 
   async clickViewProductOfFirstProduct(): Promise<void> {
