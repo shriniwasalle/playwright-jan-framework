@@ -16,4 +16,4 @@ const configMap = {
   stage: stageConfig,
 };
 
-export const currentEnv = configMap['qa']; // configMap[qa]
+export const currentEnv = configMap[env]; // configMap[qa]
