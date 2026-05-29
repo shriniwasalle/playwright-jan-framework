@@ -1,4 +1,5 @@
 import { Locator, Page } from "@playwright/test";
+import { CommonUtils } from "../utils/commonUtils";
 
 export class ProductsDetailsPage {
   readonly page: Page;
@@ -16,22 +17,25 @@ export class ProductsDetailsPage {
   }
 
   async isProductsDetailsVisible(): Promise<boolean> {
-    return await this.productDetailsSection.isVisible();
+    // return await this.productDetailsSection.isVisible();
+    return CommonUtils.isVisible(this.productDetailsSection);
   }
 
   async isProductNameVisible(): Promise<boolean> {
-    return await this.productName.isVisible();
+    // return await this.productName.isVisible();
+    return CommonUtils.isVisible(this.productName);
   }
 
   async isProductCategoryVisible(): Promise<boolean> {
-    return await this.productCategory.isVisible();
+    return CommonUtils.isVisible(this.productCategory);
   }
 
   async getProductName(): Promise<string> {
-    return (await this.productName.textContent()) || "";
+    // return (await this.productName.textContent()) || "";
+    return CommonUtils.getText(this.productName);
   }
 
-  async verifyProductDetails() {
+  async getProductDetails() {
     const productDetailsObj = {
       productName: await this.getProductName(),
       productCategory: await this.getProductName(),

@@ -1,4 +1,5 @@
 import { Locator, Page } from "@playwright/test";
+import { CommonUtils } from "../utils/commonUtils";
 
 export class LoginPage {
   readonly page: Page;
@@ -16,15 +17,18 @@ export class LoginPage {
   }
 
   async enterEmailAddress(emailAddress: string) {
-    await this.txtEmailAddress.fill(emailAddress);
+    // await this.txtEmailAddress.fill(emailAddress);
+    CommonUtils.fill(this.txtEmailAddress, emailAddress);
   }
 
   async enterPassword(password: string) {
-    await this.txtPassword.fill(password);
+    // await this.txtPassword.fill(password);
+    CommonUtils.fill(this.txtPassword, password);
   }
 
   async clickLogin() {
-    await this.btnLogin.click();
+    // await this.btnLogin.click();
+    CommonUtils.click(this.btnLogin);
   }
 
   async loginToApp(emailAddress: string, password: string) {

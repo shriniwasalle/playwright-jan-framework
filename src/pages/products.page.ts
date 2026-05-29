@@ -1,4 +1,5 @@
 import { Locator, Page } from "@playwright/test";
+import { CommonUtils } from "../utils/commonUtils";
 
 export class ProductsPage {
   readonly page: Page;
@@ -14,14 +15,17 @@ export class ProductsPage {
   }
 
   async isAllProductsHeaderVisible(): Promise<boolean> {
-    return await this.allProductsHeader.isVisible();
+    // return await this.allProductsHeader.isVisible();
+    return CommonUtils.isVisible(this.allProductsHeader);
   }
 
   async isProductsListVisible(): Promise<boolean> {
-    return await this.productsList.isVisible();
+    // return await this.productsList.isVisible();
+    return CommonUtils.isVisible(this.productsList);
   }
 
   async clickViewProductOfFirstProduct(): Promise<void> {
-    await this.viewProductButtons.first().click();
+    // await this.viewProductButtons.first().click();
+    await CommonUtils.click(this.viewProductButtons.first());
   }
 }

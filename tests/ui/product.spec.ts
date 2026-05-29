@@ -40,7 +40,7 @@ test.describe("Verify Products", () => {
     console.log("productDetails.productName::", productDetails.productName);
     expect(actualProductName).toBe(productDetails.productName);
 
-    const productDetailsObj = await productsDetailsPage.verifyProductDetails();
+    const productDetailsObj = await productsDetailsPage.getProductDetails();
 
     expect(productDetailsObj.productName).toBe(productDetails.productName);
   });
