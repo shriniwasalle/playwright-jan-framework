@@ -31,10 +31,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat """
-                ENV=${params.ENV} \
-                npx playwright test --grep "${params.TAG}"
-                """
+                bat 'npm run test:%ENV%'
             }
         }
     }
