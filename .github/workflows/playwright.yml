@@ -1,6 +1,6 @@
 name: Playwright Tests
 on:
-  workflow_dispatch: {
+  workflow_dispatch:
     inputs:
       environment:
         description: "Select Environment"
@@ -11,8 +11,7 @@ on:
           - qa
           - stage
           - prod
-          - dev  
-  }
+          - dev
   push:
     branches: [main, master]
   pull_request:
