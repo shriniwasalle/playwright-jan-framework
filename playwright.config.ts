@@ -17,6 +17,7 @@ export default defineConfig({
   retries: RETRIES,
   workers: WORKERS,
   reporter: REPORTER_CONFIG,
+  globalTimeout: 60000,
 
   use: {
     headless: HEADLESS,
