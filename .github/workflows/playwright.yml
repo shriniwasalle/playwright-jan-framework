@@ -8,6 +8,7 @@ on:
         description: "Select environment"
         required: true
         default: qa
+        type: choice
         options:
           - qa
           - stage
