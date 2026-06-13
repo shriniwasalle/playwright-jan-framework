@@ -1,0 +1,21 @@
+Webhook Integration in Github and Jenkins
+1. Install ngrok 
+https://ngrok.com/download/windows?tab=install
+
+2. Create an Account on ngrok site
+3. Create a token 
+4. Configure token on your local using below command
+   ngrok config add-authtoken <token>
+
+5. Then, run the below command to create a public url for your localhost 
+  ngrok http 8080
+
+6. Copy the public url and paste it in Github Webhook
+e.g: https://strobe-twiddle-humbling.ngrok-free.dev/github-webhook/
+
+7. Now, in jenkins project -> configure -> enable this option "GitHub hook trigger for GITScm polling"
+
+8. Push any code to Github repo  
+
+9. Observe the build is triggered in Jenkins automatically
+
