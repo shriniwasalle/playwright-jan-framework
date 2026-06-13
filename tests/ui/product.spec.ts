@@ -10,7 +10,7 @@ const productDetails = JSON.parse(
   ),
 ) as { productName: string };
 
-// Verify products
+// Verify product
 test.describe.skip("Verify Products", () => {
   test("Verify All Products and product detail page", async ({
     page,
